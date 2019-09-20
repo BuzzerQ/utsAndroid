@@ -22,6 +22,7 @@ import java.util.zip.Inflater;
 
 public class MainActivity extends AppCompatActivity {
 
+    //set variable
     EditText etNamaDepan, etNamaBelakang, etAlamat, etTelepon;
     RadioGroup rgPilihan;
     RadioButton rbSMP, rbSMP1, rbMTS;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //get data by id
         etNamaDepan = (EditText) findViewById(R.id.et_namaDepan);
         etNamaBelakang = (EditText) findViewById(R.id.et_namaBelakang);
         etAlamat = (EditText) findViewById(R.id.et_alamat);
@@ -54,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        //menambah menu
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.my_menu, menu);
         return true;
@@ -62,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
+            //simpan data
             case R.id.mn_simpan:
                 String nama_depan, nama_belakang, alamat, telepon, pilihan, jenis_kelamin, sekolah;
                 boolean dwidaya, dbs, merah, sutarmadja;
@@ -83,11 +87,13 @@ public class MainActivity extends AppCompatActivity {
                 merah = cbMerah.isChecked();
                 sutarmadja = cbSutarmadja.isChecked();
 
-                if(nama_depan.length() == 0 || nama_belakang.length() == 0){
-                    Toast.makeText(getApplicationContext(), "Mohon Lengkapi Nama Anda", Toast.LENGTH_SHORT).show();
+                //jiks ada data yang kosong, muncul snackbar error
+                if(nama_depan.length() == 0 || nama_belakang.length() == 0 || telepon.length() == 0 || alamat.length() == 0){
+                    Toast.makeText(getApplicationContext(), "Mohon Lengkapi Data Anda", Toast.LENGTH_SHORT).show();
                     return false;
                 }
 
+                //kirim data ke activity selanjutnya
                 Intent i = new Intent(MainActivity.this, detailActivity.class);
                 i.putExtra("i_namaDepan",nama_depan);
                 i.putExtra("i_namaBelakang",nama_belakang);
@@ -98,6 +104,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
 
+
+                //mengkosongkan data
             case R.id.mn_kosong:
                 etNamaDepan.setText("");
                 etNamaBelakang.setText("");
@@ -126,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
                 return true;
 
+                //memunculkan snakbar biodata
             case R.id.mn_biodata:
                 View v = findViewById(R.id.main_layout);
                 String pesan = "Created by : Yoel Abraham";

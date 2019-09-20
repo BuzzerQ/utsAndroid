@@ -17,6 +17,7 @@ public class detailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
+        //mengambil data
         final TextView tvNamaDepan = (TextView) findViewById(R.id.tv_namadepan);
         final TextView tvNamaBelakang = (TextView) findViewById(R.id.tv_namabelakang);
 
