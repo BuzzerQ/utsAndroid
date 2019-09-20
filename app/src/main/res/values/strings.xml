@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">UTS ANDROID</string>
+    <string name="menu_simpan">
+        Simpan
+    </string>
+    <string name="menu_kosong">
+        Kosong
+    </string>
     <string-array name="jenis_kelamin">
         <item>Jenis Kelamin</item>
         <item>Pria</item>

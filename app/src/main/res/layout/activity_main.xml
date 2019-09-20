@@ -21,6 +21,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="PENDAFTARAN"
+                    android:textColor="@color/colorPrimary"
                     android:textAppearance="@style/TextAppearance.AppCompat.Large"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -31,6 +32,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="SISWA(I) SMK JAYA PEMBANGUNAN 2"
+                    android:textColor="@color/colorPrimary"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
@@ -40,63 +42,135 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:paddingTop="10dp"
                     android:text="Sebelum mengisi formulir ini diharapkan wali murid telah melengkapi persyaratan yang ditentukan" />
 
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableLeft="@drawable/ic_person_48dp"
+                        android:drawableStart="@drawable/ic_person_48dp"/>
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nama Depan"
+                        android:id="@+id/et_namaDepan"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="48dp">
+
+                    <EditText
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Nama Belakang"
+                        android:id="@+id/et_namaBelakang"/>
+
+                </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/ic_place_48dp"
+                    android:drawableLeft="@drawable/ic_place_48dp" />
+
                 <EditText
+                    android:id="@+id/et_alamat"
                     android:layout_width="fill_parent"
                     android:layout_height="match_parent"
-                    android:paddingTop="25dp"
-                    android:hint="Nama Depan"
-                    android:id="@+id/et_namaDepan"/>
+                    android:hint="Alamat" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/ic_phone_48dp"
+                android:drawableLeft="@drawable/ic_phone_48dp" />
 
                 <EditText
                     android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Nama Belakang"
-                    android:id="@+id/et_namaBelakang"/>
-
-                <EditText
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:hint="Alamat"
-                    android:id="@+id/et_alamat"/>
-
-                <EditText
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:hint="Telepon"
                     android:id="@+id/et_telepon"/>
 
-                <RadioGroup
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
+                    android:layout_height="150px"
                     android:orientation="horizontal">
 
-                    <RadioButton
-                        android:layout_width="wrap_content"
+                    <RadioGroup
+                        android:id="@+id/rg_pilihan"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="SMP"/>
+                        android:orientation="horizontal"
+                        android:paddingTop="10dp">
 
-                    <RadioButton
+                        <RadioButton
+                            android:id="@+id/rb_smp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SMP" />
+
+                        <RadioButton
+                            android:id="@+id/rb_smp1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="SMP1" />
+
+                        <RadioButton
+                            android:id="@+id/rb_mts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="MTS" />
+
+                    </RadioGroup>
+
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="SMP!"/>
+                        android:layout_height="match_parent"
+                        android:drawableStart="@drawable/ic_place_48dp"
+                        android:drawableLeft="@drawable/ic_place_48dp" />
+                </LinearLayout>
+            </LinearLayout>
 
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="MTS"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                </RadioGroup>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/ic_place_48dp"
+                    android:drawableLeft="@drawable/ic_place_48dp" />
 
                 <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="20dp"
+                    android:paddingTop="25dp"
+                    android:id="@+id/sp_jenisKelamin"
                     android:entries="@array/jenis_kelamin"/>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -105,25 +179,47 @@
                 android:text="Pilihan Sekolah Alternatif"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
-            <CheckBox
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="SMU Dwidaya"/>
+                android:layout_height="120px"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableStart="@drawable/ic_library_books_48"
+                    android:drawableLeft="@drawable/ic_library_books_48" />
 
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SMU Don Bosco"/>
+                android:paddingTop="10dp"
+                android:text="SMU Dwidaya"
+                android:id="@+id/cb_dwidaya"/>
+
+            </LinearLayout>
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="120px"
+                android:text="SMU Don Bosco"
+                android:layout_marginLeft="48dp"
+                android:id="@+id/cb_dbs"/>
+
+            <CheckBox
+                android:layout_width="match_parent"
+                android:layout_height="120px"
+                android:layout_marginLeft="48dp"
+                android:text="SMK Merah Putih"
+                android:id="@+id/cb_merahputih"/>
 
             <CheckBox
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="SMK Merah Putih"/>
-
-            <CheckBox
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="SMU Sutarmadja"/>
+                android:height="120px"
+                android:layout_marginLeft="48dp"
+                android:text="SMU Sutarmadja"
+                android:id="@+id/cb_sutarmadja"/>
 
         </LinearLayout>
     </ScrollView>
